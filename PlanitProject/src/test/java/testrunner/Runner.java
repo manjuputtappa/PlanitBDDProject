@@ -8,7 +8,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(features="src/test/feature",
                  glue={"stepdefinition"},
                  tags={"@TEST"},
-                 plugin={"html:target/cucumber-report-html","json:target/cucumber.json","junit:target/cucumber-reports/cucumber.xml"})	
+                 plugin={"pretty","html:target/cucumber-report-html","json:target/cucumber.json","junit:target/cucumber-reports/cucumber.xml"})	
 
 public class Runner 				
 {		
