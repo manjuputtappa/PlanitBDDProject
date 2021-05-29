@@ -3,6 +3,7 @@ package objectrepository;
 import webinteractivies.Page;
 
 public enum PlanitPage {
+	lnkJupiterToys(Page.findingBy.xpath,"//h1[contains(text(),'Jupiter Toys')]"),
 	lnkContactPage(Page.findingBy.xpath,"//a[text()='Contact']"),
 	btnSubmit(Page.findingBy.xpath,"//a[text()='Submit']"),
 	txtForeName(Page.findingBy.xpath,"//span[@id='forename-err']"),

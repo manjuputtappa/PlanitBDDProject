@@ -1,10 +1,9 @@
 package stepdefinition;
 
-import java.util.RandomAccess;
-
 import org.junit.Assert;
 
-import cucumber.api.PendingException;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -14,13 +13,16 @@ import webinteractivies.DriverFactory;
 import webinteractivies.RandomDataGenerator;
 
 public class AppStepDef 
-{
+{	
 	@Given("^launch the planit application$")
 	public void launch_the_planit_application() throws Throwable {	    
-	     String urlVal="http://jupiter.cloud.planittesting.com";
-		 new DriverFactory();	
-		 DriverFactory.getDriver().navigate().to(urlVal);
-		 DriverFactory.getDriver().manage().window().maximize();			
+		 String actualValue=IWebActions.validate.getTextOf(PlanitPage.lnkJupiterToys.get());
+		 String expectedValue="Jupiter Toys";
+		 if(actualValue.equalsIgnoreCase(expectedValue))
+				Assert.assertTrue(true);
+			else
+				Assert.assertTrue(false);
+			System.out.println(actualValue + " page is loaded");
 	     Thread.sleep(1000);
 	}
 
